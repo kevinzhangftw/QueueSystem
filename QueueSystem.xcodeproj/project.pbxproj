@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC8B6D1D1C56E4AD00598B6F /* dlinkedlist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8B6D1B1C56E4AD00598B6F /* dlinkedlist.cpp */; };
+		AC8B6D201C56E4E400598B6F /* ticket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8B6D1E1C56E4E400598B6F /* ticket.cpp */; };
 		ACF8C57E1C56A01500110E30 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACF8C57D1C56A01500110E30 /* main.cpp */; };
 		ACF8C5861C56A37600110E30 /* ccqueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACF8C5841C56A37600110E30 /* ccqueue.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC8B6D1B1C56E4AD00598B6F /* dlinkedlist.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dlinkedlist.cpp; sourceTree = "<group>"; };
+		AC8B6D1C1C56E4AD00598B6F /* dlinkedlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dlinkedlist.h; sourceTree = "<group>"; };
+		AC8B6D1E1C56E4E400598B6F /* ticket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ticket.cpp; sourceTree = "<group>"; };
+		AC8B6D1F1C56E4E400598B6F /* ticket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ticket.h; sourceTree = "<group>"; };
 		ACF8C57A1C56A01500110E30 /* QueueSystem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QueueSystem; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF8C57D1C56A01500110E30 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		ACF8C5841C56A37600110E30 /* ccqueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ccqueue.cpp; sourceTree = "<group>"; };
@@ -63,6 +69,10 @@
 				ACF8C57D1C56A01500110E30 /* main.cpp */,
 				ACF8C5841C56A37600110E30 /* ccqueue.cpp */,
 				ACF8C5851C56A37600110E30 /* ccqueue.h */,
+				AC8B6D1E1C56E4E400598B6F /* ticket.cpp */,
+				AC8B6D1F1C56E4E400598B6F /* ticket.h */,
+				AC8B6D1B1C56E4AD00598B6F /* dlinkedlist.cpp */,
+				AC8B6D1C1C56E4AD00598B6F /* dlinkedlist.h */,
 			);
 			path = QueueSystem;
 			sourceTree = "<group>";
@@ -123,8 +133,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8B6D1D1C56E4AD00598B6F /* dlinkedlist.cpp in Sources */,
 				ACF8C57E1C56A01500110E30 /* main.cpp in Sources */,
 				ACF8C5861C56A37600110E30 /* ccqueue.cpp in Sources */,
+				AC8B6D201C56E4E400598B6F /* ticket.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +255,7 @@
 				ACF8C5831C56A01500110E30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
