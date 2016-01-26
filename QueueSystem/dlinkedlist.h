@@ -6,15 +6,6 @@
 //  Copyright © 2016 Kai Zhang. All rights reserved.
 //
 
-#ifndef dlinkedlist_hpp
-#define dlinkedlist_hpp
-
-#include <stdio.h>
-// File:        dlinkedlist.h
-// Author:      Geoffrey Tien
-// Date:        January 22, 2016
-// Description: Definition of a template doubly-linked-list class for CMPT 225 assignment 2
-
 #ifndef _DLINKEDLIST_H_
 #define _DLINKEDLIST_H_
 
@@ -26,8 +17,7 @@ using namespace std;
 
 // template class for doubly-linked list node
 template <class T>
-class Node
-{
+class Node{
 public:
     T data;
     //string data;
@@ -36,8 +26,7 @@ public:
     
     // default constructor
     template <class T>
-    Node(T value)
-    {
+    Node(T value){
         data = value;
         prev = NULL;
         next = NULL;
@@ -46,8 +35,7 @@ public:
 
 // DLinkedList class definition
 template <class T>
-class DLinkedList
-{
+class DLinkedList{
 private:
     // DLinkedList private members
     int size; // number of items stored in list
@@ -132,7 +120,5 @@ public:
     DLinkedList& operator=(const DLinkedList& ll);
 };
 
-#include "dlinkedlist.cpp"
 
-#endif
-#endif /* dlinkedlist_hpp */
+#endif /* dlinkedlist_h */

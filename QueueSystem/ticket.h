@@ -10,11 +10,6 @@
 #define ticket_hpp
 
 #include <stdio.h>
-// File:        ticket.h
-// Author:      Geoffrey Tien
-// Date:        January 18, 2016
-// Description: Definition of a customer complaint ticket class for CMPT 225 assignment 2
-
 #pragma once
 
 #include <string>

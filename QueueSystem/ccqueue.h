@@ -6,15 +6,8 @@
 //  Copyright © 2016 Kai Zhang. All rights reserved.
 //
 
-#ifndef ccqueue_hpp
-#define ccqueue_hpp
-
-#include <stdio.h>
-
-// File:        ccqueue.h
-// Author:      Geoffrey Tien
-// Date:        January 18, 2016
-// Description: Definition of a customer complaint queue class for CMPT 225 assignment 2
+#ifndef ccqueue_h
+#define ccqueue_h
 
 #pragma once
 
@@ -91,4 +84,4 @@ public:
 
 
 
-#endif /* ccqueue_hpp */
+#endif /* ccqueue_h */
