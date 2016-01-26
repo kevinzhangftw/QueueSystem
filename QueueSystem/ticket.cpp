@@ -5,8 +5,6 @@
 //  Created by Kai Zhang on 2016-01-25.
 //  Copyright © 2016 Kai Zhang. All rights reserved.
 //
-
-#include "ticket.h"
 // File:        ticket.cpp
 // Author:      Geoffrey Tien
 // Date:        January 18, 2016

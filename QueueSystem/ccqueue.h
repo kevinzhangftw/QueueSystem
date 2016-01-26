@@ -26,8 +26,8 @@
 
 using namespace std;
 
-class CCQueue
-{
+class CCQueue{
+  
 private:
     DLinkedList<Ticket> tickets; // collection of ticket objects
     unsigned int maxticketid;    // largest-valued ticketid. Used to generate new tickets to insert
@@ -73,8 +73,7 @@ public:
     // returns a formatted string with the ticket queue contents
     // You may use this function to check the contents of your queue
     // You do not need to copy this into your .cpp file
-    string PrintStatus() const
-    {
+    string PrintStatus() const{
         string complainttext;
         ostringstream output;
         output << "Ticket queue contains " << tickets.Size() << " open tickets.\n";
