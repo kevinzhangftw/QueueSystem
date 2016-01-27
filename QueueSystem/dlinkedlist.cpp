@@ -10,28 +10,33 @@
 
 // helper function for deep copy
 // Used by copy constructor and operator=
-void DLinkedList::CopyList(const DLinkedList& ll){
+template <class T>
+void DLinkedList<T>::CopyList(const DLinkedList& ll){
   //imp here
 }
 
 // helper function for deep delete
 // Used by destructor and copy/assignment
-void DLinkedList::DeleteList(){
+template <class T>
+void DLinkedList<T>::DeleteList(){
   //imp here
 }
 
 // default constructor
-DLinkedList::DLinkedList(){
+template <class T>
+DLinkedList<T>::DLinkedList(){
  //imp here
 }
 
 // copy constructor, performs deep copy of list elements
-DLinkedList::DLinkedList(const DLinkedList& ll){
+template <class T>
+DLinkedList<T>::DLinkedList(const DLinkedList& ll){
   CopyList(ll);
 }
 
 // destructor
-DLinkedList::~DLinkedList(){
+template <class T>
+DLinkedList<T>::~DLinkedList(){
   DeleteList();
 }
 
@@ -40,14 +45,16 @@ DLinkedList::~DLinkedList(){
 // Inserts an item at the front of the list
 // POST:  List contains item at position 0
 // PARAM: item = item to be inserted
-void DLinkedList::InsertFront(T item){
+template <class T>
+void DLinkedList<T>::InsertFront(T item){
   //imp here
 }
 
 // Inserts an item at the back of the list
 // POST:  List contains item at back
 // PARAM: item = item to be inserted
-void InsertBack(T item){
+template <class T>
+void DLinkedList<T>::InsertBack(T item){
   //imp here
 }
 
@@ -56,7 +63,8 @@ void InsertBack(T item){
 // PRE:   0 <= p <= size
 // POST:  List contains item at position p
 // PARAM: item = item to be inserted, p = position where item will be inserted
-void InsertAt(T item, int p){
+template <class T>
+void DLinkedList<T>::InsertAt(T item, int p){
   //imp here
 }
 
@@ -65,7 +73,8 @@ void InsertAt(T item, int p){
 // PRE:   0 <= p < size
 // POST:  Item is removed from list
 // PARAM: p = position from where item will be removed
-T DLinkedList::RemoveAt(int p){
+template <class T>
+T DLinkedList<T>::RemoveAt(int p){
   T posp;
   //imp here
   return posp;
@@ -79,32 +88,37 @@ T DLinkedList::RemoveAt(int p){
 // PRE:
 // POST:  List contains no duplicates, front and back point to the appropriate nodes
 // PARAM:
-void DLinkedList::RemoveDuplicates(){
+template <class T>
+void DLinkedList<T>::RemoveDuplicates(){
   //imp here
 }
 
 // ACCESSORS
 
 // Returns size of list
-int DLinkedList::Size() const{
+template <class T>
+int DLinkedList<T>::Size() const{
   //imp here
 }
 
 // Returns whether the list is empty
-bool DLinkedList::IsEmpty() const{
+template <class T>
+bool DLinkedList<T>::IsEmpty() const{
   //imp here
   return false;
 }
 
 // Returns existence of item
-bool DLinkedList::Contains(T item) const{
+template <class T>
+bool DLinkedList<T>::Contains(T item) const{
   //imp here
   return false;
 }
 
 // Returns item at index (0-indexed)
 // Throws exception for invalid index
-T DLinkedList::ElementAt(int p) const{
+template <class T>
+T DLinkedList<T>::ElementAt(int p) const{
   T pos0;
   //imp here
   return pos0;
@@ -116,6 +130,7 @@ T DLinkedList::ElementAt(int p) const{
 // must work in the following cases:
 // list2 = list1 -> general case
 // list2 = list2 -> should do nothing
-DLinkedList& DLinkedList::operator=(const DLinkedList& ll){
+template <class T>
+DLinkedList& DLinkedList<T>::operator=(const DLinkedList& ll){
   //imp here
 }
