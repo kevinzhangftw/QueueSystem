@@ -7,19 +7,32 @@
 //
 
 //#include "dlinkedlist.h"
-
 // helper function for deep copy
 // Used by copy constructor and operator=
 template <class T>
 void DLinkedList<T>::CopyList(const DLinkedList& ll){
-  //imp here
+    size = 0;
+    if (ll.size == 0) {
+        front = NULL;
+        back = NULL;
+        return;
+    }
+    for (int i = 0; i < ll.size; i++) {
+        InsertBack(ll.ElementAt(i));
+
+    }
 }
 
 // helper function for deep delete
 // Used by destructor and copy/assignment
 template <class T>
 void DLinkedList<T>::DeleteList(){
-  //imp here
+//    Node<T> temp = *front;
+//    while (temp != NULL) {
+//        temp = front->next;
+//        delete front;
+//        front = temp;
+//    }
 }
 
 // default constructor
@@ -27,7 +40,9 @@ void DLinkedList<T>::DeleteList(){
 
 template <class T>
 DLinkedList<T>::DLinkedList(){
-    //
+    size = 0;
+    front =  NULL;
+    back = NULL;
 }
 
 // copy constructor, performs deep copy of list elements
@@ -49,15 +64,29 @@ DLinkedList<T>::~DLinkedList(){
 // PARAM: item = item to be inserted
 template <class T>
 void DLinkedList<T>::InsertFront(T item){
-    //imp here
+    Node<T> *newnode = new Node<T> (item);
+    if (front != NULL) { //HAX
+        front->prev = newnode;
+    }
+    newnode->next = front;
+    front = newnode;
+    size++;
+    if (size == 1) { //HAX
+        back = front;
+    }
 }
-
-// Inserts an item at the back of the list
-// POST:  List contains item at back
-// PARAM: item = item to be inserted
 template <class T>
 void DLinkedList<T>::InsertBack(T item){
-    //imp here
+    Node<T> *newnode = new Node<T> (item);
+    if (back != NULL) { //HAX
+        back->next = newnode;
+    }
+    newnode->prev = back;
+    back = newnode;
+    size++;
+    if (size == 1) { //HAX
+        front = back;
+    }
 }
 
 // Inserts an item in position p (0-indexed)
@@ -67,7 +96,29 @@ void DLinkedList<T>::InsertBack(T item){
 // PARAM: item = item to be inserted, p = position where item will be inserted
 template <class T>
 void DLinkedList<T>::InsertAt(T item, int p){
-    //imp here
+    //traverse the list till position p
+    Node<T> *tempNode = front;
+    for (int i = 0; i < p; i++) {
+        tempNode = tempNode->next;
+    }
+    //splice before tempnode
+    if (tempNode == front) {
+        InsertFront(item);
+        return;
+    }
+    else if (tempNode == NULL) {
+        InsertBack(item);
+        return;
+    }
+    Node<T> *newNode = new Node<T>(item);
+    //UNHAX PLZ
+    newNode->prev = tempNode->prev;
+    newNode->prev->next = newNode;
+    newNode->next = tempNode;
+    tempNode->prev = newNode;
+    size++;
+    return;
+    
 }
 
 // Removes and returns an item from position p (0-indexed)
@@ -78,11 +129,35 @@ void DLinkedList<T>::InsertAt(T item, int p){
 template <class T>
 T DLinkedList<T>::RemoveAt(int p){
     T posp;
-    //imp here
+    Node<T> *tempNode = front;
+    if (p >= size) {
+        throw std::out_of_range("OUT OF BOUNDS");
+    }
+    for (int i = 0; i < p; i++) {
+        tempNode = tempNode->next;
+    }
+    //invariant: tempNode has a value and is within range.
+    
+    posp = tempNode->data;
+    if (tempNode->next == NULL && tempNode->prev == NULL) {
+        front = NULL;
+        back = NULL;
+    }
+    if (tempNode == front) {
+        front = tempNode->next;
+        tempNode->next->prev = NULL;
+    } else if (tempNode == back) {
+        back = tempNode->prev;
+        tempNode->prev->next = NULL;
+    } else {
+        tempNode->prev->next = tempNode->next;
+        tempNode->next->prev = tempNode->prev;
+    }
+    delete tempNode;
+    size--;
     return posp;
 }
 
-// Removes duplicates from the list, preserving existing order of remaining items.
 // The first occurrence of any duplicate (relative to the front of the list)
 //   is the one which remains.
 // We have not yet learned about efficiency so you may implement this in any way
@@ -92,7 +167,25 @@ T DLinkedList<T>::RemoveAt(int p){
 // PARAM:
 template <class T>
 void DLinkedList<T>::RemoveDuplicates(){
-    //imp here
+    //TODO:
+    //preserve existing order
+    //keep the first one
+    T uniqueOccurance;
+    //iterate...
+    for (int i = 0; i < size; i++) {
+        if (uniqueOccurance == ElementAt(i)) {
+            //the last element is the same as this one.
+            //keep last one, remove this one.
+            RemoveAt(i);
+            //if removed, unique occurance does not get reassigned. check for the next one, without incrementing i...
+            i--; //HAX
+            continue;
+        }
+        uniqueOccurance = ElementAt(i);
+        
+    }
+    
+    
 }
 
 // ACCESSORS
@@ -100,21 +193,28 @@ void DLinkedList<T>::RemoveDuplicates(){
 // Returns size of list
 template <class T>
 int DLinkedList<T>::Size() const{
-    //imp here
-    return 0;
+    return size;
 }
 
 // Returns whether the list is empty
 template <class T>
 bool DLinkedList<T>::IsEmpty() const{
-    //imp here
-    return false;
+    if (size==0) {
+        return true;
+    }else{
+        return false;
+    }
+    
 }
 
 // Returns existence of item
 template <class T>
 bool DLinkedList<T>::Contains(T item) const{
-    //imp here
+    for (int i = 0; i < size; i++) {
+        if (ElementAt(i) == item) {
+            return true;
+        }
+    }
     return false;
 }
 
@@ -122,18 +222,38 @@ bool DLinkedList<T>::Contains(T item) const{
 // Throws exception for invalid index
 template <class T>
 T DLinkedList<T>::ElementAt(int p) const{
-    T pos0;
-    //imp here
-    return pos0;
+    //TODO: verify later with larger number of elements in the list...
+    Node<T> movingFront = *front;
+    for (int i=0; i<p; ++i) {
+        if (movingFront.next) {
+            movingFront = *movingFront.next;
+        }
+        
+    }
+    return movingFront.data;
 }
 
-// OVERLOADED OPERATORS
 
-// overloaded assignment operator
-// must work in the following cases:
-// list2 = list1 -> general case
-// list2 = list2 -> should do nothing
 template <class T>
 DLinkedList<T>& DLinkedList<T>::operator=(const DLinkedList& ll){
+    bool same = true;
+    Node<T> *tempLeft = front;
+    Node<T> *tempRight = ll.front;
+    if (size != ll.size) {
+        same = false;
+    } else {
+        for (int i = 0; i < size; i++) {
+            if (tempLeft != tempRight) {
+                same = false;
+                break;
+            }
+            tempLeft = tempLeft->next;
+            tempRight = tempRight->next;
+            //TODO: verify with boundary conditions...
+        }
+    }
+    if (!same) {
+        CopyList(ll);
+    }
     return *this;
 }

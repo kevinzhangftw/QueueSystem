@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <string>
-#pragma once
+//#pragma once
 
 
 
@@ -44,4 +44,5 @@ public:
     bool operator==(const Ticket& tick) const;
     bool operator!=(const Ticket& tick) const;
 };
+//#include "ticket.cpp"
 #endif /* ticket_hpp */

@@ -36,12 +36,15 @@ public:
 template <class T>
 class DLinkedList
 {
+
 private:
   // DLinkedList private members
-  int size; // number of items stored in list
-  Node<T>* front; // references to the front
-  Node<T>* back;  //  and back of the list
-  
+    int size; // number of items stored in list
+    Node<T>* front; // references to the front
+    Node<T>* back;  //  and back of the list
+    
+    
+
   // helper function for deep copy
   // Used by copy constructor and operator=
   void CopyList(const DLinkedList& ll);
@@ -51,7 +54,8 @@ private:
   void DeleteList();
   
 public:
-  // default constructor
+    
+    // default constructor
   DLinkedList();
   
   // copy constructor, performs deep copy of list elements
@@ -111,6 +115,7 @@ public:
   // Throws exception for invalid index
   T ElementAt(int p) const;
   
+    
   // OVERLOADED OPERATORS
   
   // overloaded assignment operator

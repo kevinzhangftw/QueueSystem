@@ -9,7 +9,7 @@
 #ifndef ccqueue_h
 #define ccqueue_h
 
-#pragma once
+//#pragma once
 
 #include <sstream>
 #include <string>
@@ -82,6 +82,8 @@ public:
     };
 };
 
+//#include "ccqueue.cpp"
+
+#endif 
 
 
-#endif /* ccqueue_h */
