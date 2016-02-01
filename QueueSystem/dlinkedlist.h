@@ -23,7 +23,7 @@ public:
   Node<T>* next;
   
   // default constructor
-  template <class T>
+//  template <class T>
   Node(T value)
   {
     data = value;

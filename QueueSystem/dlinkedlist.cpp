@@ -6,7 +6,7 @@
 //  Copyright © 2016 Kai Zhang. All rights reserved.
 //
 
-#include "dlinkedlist.h"
+//#include "dlinkedlist.h"
 
 // helper function for deep copy
 // Used by copy constructor and operator=
@@ -23,21 +23,23 @@ void DLinkedList<T>::DeleteList(){
 }
 
 // default constructor
+
+
 template <class T>
 DLinkedList<T>::DLinkedList(){
- //imp here
+    //
 }
 
 // copy constructor, performs deep copy of list elements
 template <class T>
 DLinkedList<T>::DLinkedList(const DLinkedList& ll){
-  CopyList(ll);
+    CopyList(ll);
 }
 
 // destructor
 template <class T>
 DLinkedList<T>::~DLinkedList(){
-  DeleteList();
+    DeleteList();
 }
 
 // MUTATORS
@@ -47,7 +49,7 @@ DLinkedList<T>::~DLinkedList(){
 // PARAM: item = item to be inserted
 template <class T>
 void DLinkedList<T>::InsertFront(T item){
-  //imp here
+    //imp here
 }
 
 // Inserts an item at the back of the list
@@ -55,7 +57,7 @@ void DLinkedList<T>::InsertFront(T item){
 // PARAM: item = item to be inserted
 template <class T>
 void DLinkedList<T>::InsertBack(T item){
-  //imp here
+    //imp here
 }
 
 // Inserts an item in position p (0-indexed)
@@ -65,7 +67,7 @@ void DLinkedList<T>::InsertBack(T item){
 // PARAM: item = item to be inserted, p = position where item will be inserted
 template <class T>
 void DLinkedList<T>::InsertAt(T item, int p){
-  //imp here
+    //imp here
 }
 
 // Removes and returns an item from position p (0-indexed)
@@ -75,9 +77,9 @@ void DLinkedList<T>::InsertAt(T item, int p){
 // PARAM: p = position from where item will be removed
 template <class T>
 T DLinkedList<T>::RemoveAt(int p){
-  T posp;
-  //imp here
-  return posp;
+    T posp;
+    //imp here
+    return posp;
 }
 
 // Removes duplicates from the list, preserving existing order of remaining items.
@@ -90,7 +92,7 @@ T DLinkedList<T>::RemoveAt(int p){
 // PARAM:
 template <class T>
 void DLinkedList<T>::RemoveDuplicates(){
-  //imp here
+    //imp here
 }
 
 // ACCESSORS
@@ -98,30 +100,31 @@ void DLinkedList<T>::RemoveDuplicates(){
 // Returns size of list
 template <class T>
 int DLinkedList<T>::Size() const{
-  //imp here
+    //imp here
+    return 0;
 }
 
 // Returns whether the list is empty
 template <class T>
 bool DLinkedList<T>::IsEmpty() const{
-  //imp here
-  return false;
+    //imp here
+    return false;
 }
 
 // Returns existence of item
 template <class T>
 bool DLinkedList<T>::Contains(T item) const{
-  //imp here
-  return false;
+    //imp here
+    return false;
 }
 
 // Returns item at index (0-indexed)
 // Throws exception for invalid index
 template <class T>
 T DLinkedList<T>::ElementAt(int p) const{
-  T pos0;
-  //imp here
-  return pos0;
+    T pos0;
+    //imp here
+    return pos0;
 }
 
 // OVERLOADED OPERATORS
@@ -131,6 +134,6 @@ T DLinkedList<T>::ElementAt(int p) const{
 // list2 = list1 -> general case
 // list2 = list2 -> should do nothing
 template <class T>
-DLinkedList& DLinkedList<T>::operator=(const DLinkedList& ll){
-  //imp here
+DLinkedList<T>& DLinkedList<T>::operator=(const DLinkedList& ll){
+    return *this;
 }

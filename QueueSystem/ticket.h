@@ -10,9 +10,10 @@
 #define ticket_hpp
 
 #include <stdio.h>
+#include <string>
 #pragma once
 
-#include <string>
+
 
 using namespace std;
 

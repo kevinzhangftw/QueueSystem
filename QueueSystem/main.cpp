@@ -1,14 +1,8 @@
-//
-//  main.cpp
-//  QueueSystem
-//
-//  Created by Kai Zhang on 2016-01-25.
-//  Copyright © 2016 Kai Zhang. All rights reserved.
-//
+
 // File:        a1simpledriver.cpp
-// Author:      (kai zhang) / Geoffrey Tien
+// Author:      (your name here) / Geoffrey Tien
 // Date:        January 19, 2016
-// Description: Basic test driver 
+// Description: Basic test driver for CMPT 225 assignment #2
 //              This file tests some functions of the CCQueue and DLinkedList classes of assignment #2.
 //              Note that only functions which are called will be compiled, therefore you must
 //                ensure that every function in your classes is called at least once.
@@ -23,10 +17,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
-
-#include "ccqueue.h"
 #include "dlinkedlist.h"
-#include "ticket.h"
 
 using namespace std;
 
@@ -39,13 +30,13 @@ int main()
 {
     cout << "Entering DLinkedList test function... " << endl;
     LLTest();
-    cout << "... DLinkedList test function complete!\n" << endl;
-    
-    cout << "Entering CCQueue test function... " << endl;
-    CCQTest();
-    cout << "... CCQueue test function complete!\n" << endl;
-    
-    system("pause");
+//    cout << "... DLinkedList test function complete!\n" << endl;
+//    
+//    cout << "Entering CCQueue test function... " << endl;
+//    CCQTest();
+//    cout << "... CCQueue test function complete!\n" << endl;
+//    
+//    system("pause");
     return 0;
 }
 
@@ -90,19 +81,19 @@ void LLTest()
     else
         cout << "13 not found in llc." << endl;
 }
-
-void CCQTest()
-{
-    CCQueue ccq;
-    ccq.Add("Alrikr", "Video card smoked");
-    ccq.Add("Bjornstjerne", "Received wrong colour cable");
-    ccq.Add("Cyprianus", "Motherboard DOA");
-    ccq.Add("Dietrich", "Order not received");
-    ccq.Add("Elisaeus", "Only 931GB on 1TB hard drive");
-    cout << "Size of ticket queue: " << ccq.Size() << endl;
-    ccq.Service();
-    ccq.MoveUp(3);
-    ccq.MoveUp(2);
-    ccq.MoveDown(2);
-    cout << ccq.PrintStatus() << endl;
-}
+//
+//void CCQTest()
+//{
+//    CCQueue ccq;
+//    ccq.Add("Alrikr", "Video card smoked");
+//    ccq.Add("Bjornstjerne", "Received wrong colour cable");
+//    ccq.Add("Cyprianus", "Motherboard DOA");
+//    ccq.Add("Dietrich", "Order not received");
+//    ccq.Add("Elisaeus", "Only 931GB on 1TB hard drive");
+//    cout << "Size of ticket queue: " << ccq.Size() << endl;
+//    ccq.Service();
+//    ccq.MoveUp(3);
+//    ccq.MoveUp(2);
+//    ccq.MoveDown(2);
+//    cout << ccq.PrintStatus() << endl;
+//}

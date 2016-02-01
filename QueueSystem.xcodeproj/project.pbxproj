@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC8B6D1D1C56E4AD00598B6F /* dlinkedlist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8B6D1B1C56E4AD00598B6F /* dlinkedlist.cpp */; };
+		344BCC1C1C5ECE660012A5DC /* blank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 344BCC1A1C5ECE660012A5DC /* blank.cpp */; settings = {ASSET_TAGS = (); }; };
 		AC8B6D201C56E4E400598B6F /* ticket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC8B6D1E1C56E4E400598B6F /* ticket.cpp */; };
 		ACF8C57E1C56A01500110E30 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACF8C57D1C56A01500110E30 /* main.cpp */; };
-		ACF8C5861C56A37600110E30 /* ccqueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACF8C5841C56A37600110E30 /* ccqueue.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		344BCC1A1C5ECE660012A5DC /* blank.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = blank.cpp; sourceTree = "<group>"; };
+		344BCC1B1C5ECE660012A5DC /* blank.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = blank.hpp; sourceTree = "<group>"; };
 		AC8B6D1B1C56E4AD00598B6F /* dlinkedlist.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dlinkedlist.cpp; sourceTree = "<group>"; };
 		AC8B6D1C1C56E4AD00598B6F /* dlinkedlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dlinkedlist.h; sourceTree = "<group>"; };
 		AC8B6D1E1C56E4E400598B6F /* ticket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ticket.cpp; sourceTree = "<group>"; };
@@ -50,6 +51,8 @@
 		ACF8C5711C56A01500110E30 = {
 			isa = PBXGroup;
 			children = (
+				344BCC1A1C5ECE660012A5DC /* blank.cpp */,
+				344BCC1B1C5ECE660012A5DC /* blank.hpp */,
 				ACF8C57C1C56A01500110E30 /* QueueSystem */,
 				ACF8C57B1C56A01500110E30 /* Products */,
 			);
@@ -133,9 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC8B6D1D1C56E4AD00598B6F /* dlinkedlist.cpp in Sources */,
 				ACF8C57E1C56A01500110E30 /* main.cpp in Sources */,
-				ACF8C5861C56A37600110E30 /* ccqueue.cpp in Sources */,
+				344BCC1C1C5ECE660012A5DC /* blank.cpp in Sources */,
 				AC8B6D201C56E4E400598B6F /* ticket.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

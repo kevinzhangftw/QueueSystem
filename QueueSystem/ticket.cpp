@@ -1,9 +1,7 @@
-//
-//  ticket.cpp
-//  QueueSystem
-//
-//  Created by Kai Zhang on 2016-01-25.
-//  Copyright © 2016 Kai Zhang. All rights reserved.
+// File:        ticket.cpp
+// Author:      Geoffrey Tien
+// Date:        January 18, 2016
+// Description: Implementation of a customer complaint ticket class for CMPT 225 assignment 2
 
 #include "ticket.h"
 
@@ -16,7 +14,7 @@ Ticket::Ticket()
 }
 
 // parameterized constructor
-Ticket::Ticket(unsigned int tid, string cname, string cplnt)
+Ticket::Ticket(unsigned int tid, std::string cname, std::string cplnt)
 {
     ticketid = tid;
     if (cname == "")
@@ -37,12 +35,12 @@ unsigned int Ticket::GetID() const
     return ticketid;
 }
 
-string Ticket::GetCustomer() const
+std::string Ticket::GetCustomer() const
 {
     return customername;
 }
 
-string Ticket::GetComplaint() const
+std::string Ticket::GetComplaint() const
 {
     return complaint;
 }
